@@ -8,7 +8,7 @@ The Bookstore is a website similar to the "Awesome Books" website built in the p
 
 The app will use the "feature folder" approach. I will also set up routing using React Router.
 
-![screeshoot](./src/access%20/bookList.png)
+![screeshoot](./src/access/bookList.png)
 
 ## Built With
 - JavaScript
