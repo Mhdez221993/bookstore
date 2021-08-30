@@ -3,7 +3,7 @@ import React from 'react';
 function Categories() {
   return (
     <div className="Categories">
-      <p>Hello from Categories page</p>
+      <p>The Category page is Under construction</p>
     </div>
   );
 }
