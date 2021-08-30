@@ -1,9 +1,12 @@
 import React from 'react';
+import AddBooks from './AddBook';
+import DisplayBooks from './DisplayBooks';
 
 function Books() {
   return (
     <div className="Books">
-      <p>Hello from Books page</p>
+      <DisplayBooks />
+      <AddBooks />
     </div>
   );
 }
