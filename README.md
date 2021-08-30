@@ -1,7 +1,12 @@
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 # BookList
+The Bookstore is a website similar to the "Awesome Books" website built in the previous module. I will create an MVP version of it that allows you me:
 
-In this project, we will refactor the Calculator component we developed in the past projects. Instead of using class based components, we will use now hooks.
+* Display a list of books.
+* Add a book.
+* Remove a selected book.
+
+The app will use the "feature folder" approach. I will also set up routing using React Router.
 
 ![screeshoot](./src/assess/math-magicians.png)
 
@@ -17,33 +22,18 @@ In this project, we will refactor the Calculator component we developed in the p
 
 ## Getting Started
 
-If you want a copy of this project go to the Github repository and download it from there
-
-- [React Template](https://github.com/Mhdez221993/react-template)
-
-### Setup
-
 ```cmd
-git clone  git@github.com:Mhdez221993/JavaScript-capstone-project.git
-cd JavaScript-capstone-project
+git clone  git@github.com:Mhdez221993/bookstore.git
+cd bookstore
 npm install
 npm start
 ```
 
 ## Available Scripts
 
-### `npm run e2s`
-To run end to end test with cypress
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
@@ -107,7 +97,7 @@ npm install --save-dev stylelint@13.3.x stylelint-scss@3.17.x stylelint-config-s
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Mhdez221993/math-magicians/issues)
+Feel free to check the [issues page](https://github.com/Mhdez221993/bookstore/issues)
 
 =======
 
