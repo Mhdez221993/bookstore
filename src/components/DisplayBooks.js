@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { postBooks, getBooks } from '../redux/books/books';
 
 function DisplayBooks() {
   const dispatch = useDispatch();
   const books = useSelector(book => book.booksReducer);
+
+  useEffect(
+    () => {
+      dispatch(getBooks());
+    },
+    [],
+  );
 
   return (
     <div className="DisplayBooks">
@@ -19,10 +25,10 @@ function DisplayBooks() {
             </span>
             <span>
               {' '}
-              { book.author }
+              { book.category }
               {' '}
             </span>
-            <button type="button" onClick={() => dispatch(removeBook(book.id))}>Delete</button>
+            <button type="button" onClick={() => dispatch(postBooks(book.id, 'DELETE'))}>Delete</button>
           </li>
         ))}
       </ul>
