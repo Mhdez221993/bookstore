@@ -26,13 +26,4 @@ export default class FetchApi {
       config,
     );
   }
-
-  // async deleteBook(id) {
-  //   await fetch(
-  //     `${this.api}/${id}`,
-  //     {
-  //       method: 'DELETE',
-  //     },
-  //   );
-  // }
 }
