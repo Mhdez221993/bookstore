@@ -5,12 +5,12 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      path: '/books',
+      path: '/',
       text: 'BookStore',
     },
     {
       id: 2,
-      path: '/books',
+      path: '/',
       text: 'Books',
     },
     {
