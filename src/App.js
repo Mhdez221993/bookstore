@@ -11,14 +11,16 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Books />
-        </Route>
-        <Route exact path="/categories">
-          <Categories />
-        </Route>
-      </Switch>
+      <div className="Main">
+        <Switch>
+          <Route exact path="/">
+            <Books />
+          </Route>
+          <Route exact path="/categories">
+            <Categories />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }
