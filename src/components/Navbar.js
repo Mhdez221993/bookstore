@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const Navbar = () => {
   const links = [
@@ -18,6 +19,11 @@ const Navbar = () => {
       path: '/categories',
       text: 'Categories',
     },
+    {
+      id: 4,
+      path: '/',
+      text: <AiOutlineUser className="login" />,
+    },
   ];
 
   return (
@@ -26,7 +32,7 @@ const Navbar = () => {
         {links.map(link => (
           <li key={link.id} className="nav-links">
             <NavLink to={link.path} activeClassName="active-link" exact>
-              {link.text}
+              <span className="navigation-menu">{link.text}</span>
             </NavLink>
           </li>
         ))}
