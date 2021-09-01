@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { postBooks, getBooks } from '../redux/books/books';
+import ProgresCircle from './ProgresCircle';
 
 function DisplayBooks() {
   const dispatch = useDispatch();
@@ -28,8 +29,14 @@ function DisplayBooks() {
                 <button className="crud" type="button">Edit</button>
               </div>
             </div>
-            <div className="book-progress">Performance</div>
-            <div className="book-chapteer">chapteer</div>
+            <div className="book-progress">
+              <ProgresCircle />
+            </div>
+            <div className="book-chapteer">
+              <span className="chapter-items">Current Chapter</span>
+              <span className="chapter-items">Chapter 17</span>
+              <div className="chapter-items"><button className="update-progress" type="button">Update progres</button></div>
+            </div>
           </li>
         ))}
       </ul>
