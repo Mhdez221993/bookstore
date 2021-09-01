@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { postBooks } from '../redux/books/books';
 
 function AddBooks() {
   const dispatch = useDispatch();
@@ -9,12 +9,12 @@ function AddBooks() {
   const submitBookToStore = e => {
     e.preventDefault();
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title: e.target.title.value,
-      author: e.target.author.value,
+      category: e.target.author.value,
     };
 
-    dispatch(addBook(newBook));
+    dispatch(postBooks(newBook, 'POST'));
     e.target.title.value = '';
     e.target.author.value = '';
   };
