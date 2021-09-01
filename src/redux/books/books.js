@@ -31,11 +31,6 @@ export const postBooks = (payload, method) => async dispatch => {
   await fetchApi.post(payload, method);
 };
 
-// export const deleteBooks = id => async dispatch => {
-//   dispatch(removeBook(id));
-//   await fetchApi.deleteBook(id);
-// };
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
