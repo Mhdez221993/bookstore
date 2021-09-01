@@ -17,18 +17,19 @@ function DisplayBooks() {
     <div className="DisplayBooks">
       <ul>
         {books.map(book => (
-          <li key={book.id}>
-            <span>
-              {' '}
-              { book.title }
-              {' '}
-            </span>
-            <span>
-              {' '}
-              { book.category }
-              {' '}
-            </span>
-            <button type="button" onClick={() => dispatch(postBooks(book.id, 'DELETE'))}>Delete</button>
+          <li key={book.id} className="book-list-item">
+            <div className="book-info">
+              <span className="book-category">{ book.category }</span>
+              <span className="book-title">{ book.title }</span>
+              <span className="book-category">Book author</span>
+              <div className="crud-operations">
+                <button className="crud" type="button">Comments</button>
+                <button className="crud" type="button" onClick={() => dispatch(postBooks(book.id, 'DELETE'))}>Remove</button>
+                <button className="crud" type="button">Edit</button>
+              </div>
+            </div>
+            <div className="book-progress">Performance</div>
+            <div className="book-chapteer">chapteer</div>
           </li>
         ))}
       </ul>
