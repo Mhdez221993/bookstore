@@ -22,7 +22,7 @@ function DisplayBooks() {
             <div className="book-info">
               <span className="book-category">{ book.category }</span>
               <span className="book-title">{ book.title }</span>
-              <span className="book-category">Book author</span>
+              <span className="book-author">Book author</span>
               <div className="crud-operations">
                 <button className="crud" type="button">Comments</button>
                 <button className="crud" type="button" onClick={() => dispatch(postBooks(book.id, 'DELETE'))}>Remove</button>
@@ -33,7 +33,7 @@ function DisplayBooks() {
               <ProgresCircle />
             </div>
             <div className="book-chapteer">
-              <span className="chapter-items">Current Chapter</span>
+              <span className="chapter-items first">Current Chapter</span>
               <span className="chapter-items">Chapter 17</span>
               <div className="chapter-items"><button className="update-progress" type="button">Update progres</button></div>
             </div>
