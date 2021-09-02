@@ -22,7 +22,7 @@ function AddBooks() {
   return (
     <div className="submit-book">
       <form onSubmit={submitBookToStore}>
-        <h3>ADD NEW BOOK</h3>
+        <h3 className="input-book-label">ADD NEW BOOK</h3>
         <div className="wrapper-input">
           <input
             type="text"
@@ -32,7 +32,7 @@ function AddBooks() {
           />
           <input
             type="text"
-            placeholder="category"
+            placeholder="Category"
             name="category"
             className="book-category-input"
           />
