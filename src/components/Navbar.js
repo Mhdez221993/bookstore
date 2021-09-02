@@ -1,28 +1,28 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiOutlineUser } from 'react-icons/ai';
+import { FaUserAlt } from 'react-icons/fa';
 
 const Navbar = () => {
   const links = [
     {
       id: 1,
       path: '/',
-      text: 'BookStore CMS',
+      text: <span className="nav-title">BookStore CMS</span>,
     },
     {
       id: 2,
       path: '/',
-      text: 'Books',
+      text: <span className="nav-book">Books</span>,
     },
     {
       id: 3,
       path: '/categories',
-      text: 'Categories',
+      text: <span className="nav-categories">Categories</span>,
     },
     {
       id: 4,
       path: '/',
-      text: <AiOutlineUser className="login" />,
+      text: <FaUserAlt className="login" />,
     },
   ];
 
@@ -32,7 +32,7 @@ const Navbar = () => {
         {links.map(link => (
           <li key={link.id} className="nav-links">
             <NavLink to={link.path} activeClassName="active-link" exact>
-              <span className="navigation-menu">{link.text}</span>
+              {link.text}
             </NavLink>
           </li>
         ))}
