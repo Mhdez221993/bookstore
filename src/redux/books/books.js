@@ -1,42 +1,115 @@
-import FetchApi from '../API/api';
+import * as API from '../API/api';
 
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
-const initialState = [];
-const fetchApi = new FetchApi();
+const ADD_BOOK = 'bookStore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const SET_BOOKS = 'bookStore/books/SET_BOOKS';
 
-export const addBook = payload => ({
+const initialState = [
+  {
+    item_id: 'mock-1',
+    category: 'Action',
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    progress: {
+      currentChapter: 'Chapter 17',
+      completed: '64',
+    },
+  },
+  {
+    item_id: 'mock-2',
+    category: 'Science Fiction',
+    title: 'Dune',
+    author: 'Frank Herbert',
+    progress: {
+      currentChapter: 'Chapter 3: "A Lesson Learned"',
+      completed: '8',
+    },
+  },
+  {
+    item_id: 'mock-3',
+    category: 'Economy',
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+    progress: {
+      currentChapter: 'Introduction',
+      completed: '0',
+    },
+  },
+];
+
+API.createApp();
+
+const addBook = payload => ({
   type: ADD_BOOK,
   payload,
 });
 
-export const removeBook = id => ({
+const removeBook = id => ({
   type: REMOVE_BOOK,
   id,
 });
 
-export const getBooks = () => async dispatch => {
-  const apiBooks = await fetchApi.get();
-  Object.entries(apiBooks).forEach(([id, [{ category, title }]]) => {
-    dispatch(addBook({ category, title, id }));
-  });
+const setBooks = payload => ({
+  type: SET_BOOKS,
+  payload,
+});
+
+export const createBook = book => async dispatch => {
+  const isCreated = await API.createBook(book);
+  if (isCreated) {
+    dispatch(addBook(book));
+  }
 };
 
-export const postBooks = (payload, method) => async dispatch => {
-  if (method === 'POST') {
-    dispatch(addBook(payload));
+export const deleteBook = id => async dispatch => {
+  if (id.startsWith('mock-')) {
+    dispatch(removeBook(id));
   } else {
-    dispatch(removeBook(payload));
+    const isDeleted = await API.deleteBook(id);
+
+    if (isDeleted) {
+      dispatch(removeBook(id));
+    }
   }
-  await fetchApi.post(payload, method);
+};
+
+export const loadBooks = () => async dispatch => {
+  const books = await API.getBooks();
+
+  if (books) {
+    dispatch(setBooks(books));
+  }
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      return [...state, {
+        ...action.payload,
+        author: 'Author not set',
+        progress: {
+          currentChapter: 'Introduction',
+          completed: '0',
+        },
+      }];
     case REMOVE_BOOK:
-      return state.filter(book => book.id !== action.id);
+      return state.filter(book => book.item_id !== action.id);
+    case SET_BOOKS: {
+      const saved = Object.entries(action.payload).map(([key, value]) => {
+        const [book] = value;
+        return {
+          item_id: key,
+          ...book,
+          author: 'Author not set',
+          progress: {
+            currentChapter: 'Introduction',
+            completed: '0',
+          },
+        };
+      });
+
+      return state.concat(saved);
+    }
     default:
       return state;
   }
