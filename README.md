@@ -1,6 +1,6 @@
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 # BookList
-The Bookstore is a website similar to the "Awesome Books" website built in the previous module. I will create an MVP version of it that allows you me:
+The Bookstore is a website similar to the "Awesome Books" website built in the previous module. I will create an MVP version of it that allows you:
 
 * Display a list of books.
 * Add a book.
