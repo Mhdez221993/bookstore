@@ -3,11 +3,11 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const Nav = ({ title, routes }) => (
-  <nav>
+  <nav className="navBar">
     <Link to="/">{title}</Link>
-    <ul>
+    <ul className="nav-list">
       { routes.map(({ name, path }) => (
-        <li key={path}>
+        <li key={path} className="nav-links">
           <NavLink activeClassName="active-link" exact to={path}>{name}</NavLink>
         </li>
       ))}
