@@ -2,6 +2,9 @@
   "name": "bookstore",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.17.6"
+  },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.1",
     "@testing-library/jest-dom": "^5.14.1",
