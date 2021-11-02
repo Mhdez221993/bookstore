@@ -2,13 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ProgresCircle from './ProgresCircle';
 
-const DisplayBooks = ({ title, category }) => (
+const DisplayBooks = ({ title, author, category }) => (
 
   <>
     <div className="book-info">
       <span className="book-category">{ category }</span>
+      <br />
       <span className="book-title">{ title }</span>
-      <span className="book-author">Book author</span>
+      <br />
+      <span className="book-category">{ author }</span>
+      <br />
       <div className="crud-operations">
         <button className="crud" type="button">Comments</button>
         <button className="crud" type="button">Remove</button>
@@ -27,6 +30,7 @@ const DisplayBooks = ({ title, category }) => (
 );
 
 DisplayBooks.propTypes = {
+  author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
