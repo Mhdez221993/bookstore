@@ -12,7 +12,7 @@ const Books = () => {
           id, title, author, category,
         }) => (
           <li key={id}>
-            <DisplayBooks title={title} author={author} category={category} />
+            <DisplayBooks id={id} title={title} author={author} category={category} />
             <br />
           </li>
         ))}
