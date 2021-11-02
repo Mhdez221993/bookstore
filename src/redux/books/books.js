@@ -6,9 +6,9 @@ const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const initialState = [
   {
     id: uuidv4(),
-    category: 'Action',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
+    category: 'Programming',
+    title: 'CRACKING the CODING INTERVIEW',
+    author: 'by Gayle Laakmann McDowell',
     progress: {
       currentChapter: 'Chapter 17',
       completed: '64',
@@ -16,9 +16,9 @@ const initialState = [
   },
   {
     id: uuidv4(),
-    category: 'Science Fiction',
-    title: 'Dune',
-    author: 'Frank Herbert',
+    category: 'Romantic Suspense',
+    title: 'The Hunted One',
+    author: 'by Brittney Sahin',
     progress: {
       currentChapter: 'Chapter 3: "A Lesson Learned"',
       completed: '8',
@@ -26,9 +26,9 @@ const initialState = [
   },
   {
     id: uuidv4(),
-    category: 'Economy',
-    title: 'Capital in the Twenty-First Century',
-    author: 'Suzanne Collins',
+    category: 'Business Leadership Skills',
+    title: 'Atomic Habits',
+    author: 'by James Clear',
     progress: {
       currentChapter: 'Introduction',
       completed: '0',
