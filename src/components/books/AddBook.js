@@ -1,31 +1,26 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../../redux/books/books';
+import { createBook } from '../../redux/books/books';
 
 const AddBooks = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setcategory] = useState('');
 
   const handleTitle = e => setTitle(e.target.value);
-  const handleAuthor = e => setAuthor(e.target.value);
+  const handleAuthor = e => setcategory(e.target.value);
 
   const submitBookToStore = e => {
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
-      author,
-      category: 'Unknown Category',
-      progress: {
-        currentChapter: 'Introduction',
-        completed: '0',
-      },
+      category,
     };
 
-    dispatch(addBook(newBook));
+    dispatch(createBook(newBook));
     setTitle('');
-    setAuthor('');
+    setcategory('');
     e.preventDefault();
   };
 
@@ -45,10 +40,10 @@ const AddBooks = () => {
           />
           <input
             type="text"
-            placeholder="Author"
+            placeholder="Category"
             name="author"
             className="book-author-input"
-            value={author}
+            value={category}
             onChange={handleAuthor}
           />
           <button

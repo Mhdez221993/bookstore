@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/books';
+import { deleteBook } from '../../redux/books/books';
 import ProgresCircle from './ProgresCircle';
 
 const DisplayBooks = ({
@@ -23,7 +23,7 @@ const DisplayBooks = ({
           <button
             className="crud"
             type="button"
-            onClick={() => dispatch(removeBook(id))}
+            onClick={() => dispatch(deleteBook(id))}
           >
             Remove
           </button>
