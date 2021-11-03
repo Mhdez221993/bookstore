@@ -2,7 +2,6 @@ import * as API from '../../api/client';
 
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
-const SET_BOOKS = 'bookStore/books/SET_BOOKS';
 
 const initialState = [
   {
@@ -49,11 +48,6 @@ const removeBook = id => ({
   id,
 });
 
-const setBooks = payload => ({
-  type: SET_BOOKS,
-  payload,
-});
-
 export const createBook = book => async dispatch => {
   const isCreated = await API.createBook(book);
   if (isCreated) {
@@ -77,7 +71,19 @@ export const loadBooks = () => async dispatch => {
   const books = await API.getBooks();
 
   if (books) {
-    dispatch(setBooks(books));
+    Object.entries(books).forEach(([key, value]) => {
+      const [book] = value;
+      const newBook = {
+        item_id: key,
+        ...book,
+        author: 'Author not set',
+        progress: {
+          currentChapter: 'Introduction',
+          completed: '0',
+        },
+      };
+      dispatch(addBook(newBook));
+    });
   }
 };
 
@@ -94,22 +100,7 @@ const reducer = (state = initialState, action) => {
       }];
     case REMOVE_BOOK:
       return state.filter(book => book.item_id !== action.id);
-    case SET_BOOKS: {
-      const saved = Object.entries(action.payload).map(([key, value]) => {
-        const [book] = value;
-        return {
-          item_id: key,
-          ...book,
-          author: 'Author not set',
-          progress: {
-            currentChapter: 'Introduction',
-            completed: '0',
-          },
-        };
-      });
 
-      return state.concat(saved);
-    }
     default:
       return state;
   }
