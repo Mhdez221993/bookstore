@@ -1,7 +1,8 @@
 .navBar {
   padding: 20px 80px;
   background-color: #fff;
-  border-bottom: solid 2px #f5f4f4;
+  border-bottom: solid 1px var(--white);
+  margin-bottom: 40px;
 }
 
 .nav-list {
@@ -11,9 +12,9 @@
 }
 
 .nav-title {
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.875rem;
-  font-weight: bold;
+  font-weight: 900;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -26,7 +27,7 @@
 }
 
 .nav-links:nth-child(2) > a {
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.813rem;
   font-weight: normal;
   font-stretch: normal;
@@ -38,7 +39,7 @@
 
 .nav-links:nth-child(3) > a {
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.813rem;
   font-weight: normal;
   font-stretch: normal;
