@@ -21,16 +21,16 @@ const routes = [
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Nav title="BookStore CMS" routes={routes} />
-      <Switch>
-        {
-          routes.map(
+      <div className="app">
+        <Nav title="BookStore CMS" routes={routes} />
+        <Switch>
+          { routes.map(
             ({ path, component }) => (
               <Route exact key={path} path={path}>{ component }</Route>
             ),
-          )
-        }
-      </Switch>
+          )}
+        </Switch>
+      </div>
     </Router>
   );
 }
