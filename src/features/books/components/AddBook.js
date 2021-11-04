@@ -10,7 +10,7 @@ const AddBooks = () => {
   const [category, setcategory] = useState('');
 
   const handleTitle = e => setTitle(e.target.value);
-  const handleAuthor = e => setcategory(e.target.value);
+  const handleCategory = e => setcategory(e.target.value);
 
   const submitBookToStore = e => {
     const newBook = {
@@ -39,14 +39,18 @@ const AddBooks = () => {
             required
             onChange={handleTitle}
           />
-          <input
-            type="text"
-            placeholder="Category"
-            name="author"
-            className="book-author-input"
+          <select
+            name="category"
+            className="select-category-input"
             value={category}
-            onChange={handleAuthor}
-          />
+            onChange={handleCategory}
+          >
+            <option value="" disabled>Category</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Economic">Economic</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+          </select>
           <button
             className="book-submit"
             type="submit"
