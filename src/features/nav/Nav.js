@@ -12,7 +12,7 @@ const Nav = ({ title, routes }) => (
       </li>
       { routes.map(({ name, path }) => (
         <li key={path} className="nav-links">
-          <NavLink activeClassName="active-link" exact to={path}>{name}</NavLink>
+          <NavLink className="active" activeClassName="active-link" exact to={path}>{name}</NavLink>
         </li>
       ))}
       <li className="login">
