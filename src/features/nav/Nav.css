@@ -1,0 +1,56 @@
+.navBar {
+  padding: 20px 80px;
+  background-color: #fff;
+  border-bottom: solid 2px #f5f4f4;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-title {
+  font-family: Montserrat;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--blue-title);
+}
+
+.nav-links {
+  margin-left: 30px;
+}
+
+.nav-links:nth-child(2) > a {
+  font-family: Montserrat;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.nav-links:nth-child(3) > a {
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.login {
+  color: var(--blue);
+  margin-left: auto;
+  width: 1.063rem;
+  height: 1.063rem;
+}
