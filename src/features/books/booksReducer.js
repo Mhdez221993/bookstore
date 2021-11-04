@@ -15,16 +15,6 @@ const initialState = [
     },
   },
   {
-    item_id: 'mock-2',
-    category: 'Romantic Suspense',
-    title: 'The Hunted One',
-    author: 'by Brittney Sahin',
-    progress: {
-      currentChapter: 'Chapter 3: "A Lesson Learned"',
-      completed: '8',
-    },
-  },
-  {
     item_id: 'mock-3',
     category: 'Business Leadership Skills',
     title: 'Atomic Habits',
