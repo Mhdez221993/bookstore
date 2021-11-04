@@ -1,3 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;900;&family=Roboto+Slab:wght@100&display=swap");
+
 * {
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+
+  --blue: #0290ff;
+  --bg-body: rgba(0, 0, 0, 0.05);
+  --bg-app: #fff;
+}
+
+body {
+  background-color: var(--bg-body);
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  padding: 0;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 40px auto;
+  background-color: var(--bg-app);
+  padding: 40px 80px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 19px #ccc;
 }
