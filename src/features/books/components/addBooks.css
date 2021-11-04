@@ -1,5 +1,5 @@
 .submit-book {
-  padding: 20px 80px 300px 80px;
+  padding: 50px 80px 200px 80px;
 }
 
 .wrapper-input {
@@ -9,6 +9,7 @@
 }
 
 .input-book-label {
+  margin-bottom: 20px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
