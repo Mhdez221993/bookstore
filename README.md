@@ -2,9 +2,11 @@
 
 # BookList
 
-The Bookstore App displays a list of books.
+The Bookstore website is a content management system that allows you to:
 
-The app will use the "feature folder" approach. I will also set up routing using React Router.
+* Display a list of books
+* Add a book
+* Remove a selected book
 
 ![screeshoot](./bookStore.png)
 
