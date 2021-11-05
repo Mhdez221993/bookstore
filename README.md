@@ -1,6 +1,6 @@
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore
+# BookStore
 
 The Bookstore website is a content management system that allows you to:
 
